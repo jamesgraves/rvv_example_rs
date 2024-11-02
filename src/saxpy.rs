@@ -1,4 +1,4 @@
-std::arch::global_asm!(include_str!("exampleA_5.s"));
+std::arch::global_asm!(include_str!("saxpy.s"));
 
 extern "C" {
     fn saxpy(n: usize, a: f32, x: *const f32, y: *mut f32);

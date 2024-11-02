@@ -1,4 +1,4 @@
-std::arch::global_asm!(include_str!("exampleA_4.s"));
+std::arch::global_asm!(include_str!("ternary_assign.s"));
 
 extern "C" {
     fn conditional(len: usize, x: *const i8, a: *const i16, b: *const i16, z: *mut i16);

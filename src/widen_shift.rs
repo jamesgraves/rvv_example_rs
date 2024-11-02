@@ -1,4 +1,4 @@
-std::arch::global_asm!(include_str!("example6_4.s"));
+std::arch::global_asm!(include_str!("widen_shift.s"));
 
 extern "C" {
     fn r#loop(len: usize, src: *const i16, dst: *mut i32);
