@@ -40,6 +40,5 @@ zero_loop:
 	vse8.v      v0, (a3)                 # Store zero.
 	sub         a2, a2, t1               # Decrement count.
 	add         a3, a3, t1               # Bump pointer
-	vsetvli     t1, a2, e8, m8, ta, ma   # Vectors of bytes.
 	bnez        a2, zero_loop            # Anymore?
 	ret
