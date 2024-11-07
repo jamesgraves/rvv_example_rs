@@ -1,4 +1,10 @@
 # Compact non-zero elements from input memory array to output memory array
+# arguments:
+# a0 = length
+# a1 = un-compacted input vector
+# a2 = compacted output vector
+# return value:
+# a0 = length of compacted output vector
 compact_non_zero:
 	li          a6, 0                    # Clear count of non-zero elements
 loop:

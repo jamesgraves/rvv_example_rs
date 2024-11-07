@@ -1,3 +1,8 @@
+# copy bytes from source to destination
+# arguments:
+# a0 = destination buffer
+# a1 = source buffer
+# a2 = number of bytes to copy
 memcpy:
 	mv          a3, a0                   # Copy destination
 loop:
