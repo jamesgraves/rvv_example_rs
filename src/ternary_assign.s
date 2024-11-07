@@ -1,5 +1,5 @@
 # (int16) z[i] = ((int8) x[i] < 5) ? (int16) a[i] : (int16) b[i];
-conditional:
+ternary_assign:
 	vsetvli     t0, a0, e8, m1, ta, ma   # Use 8b elements.
 	vle8.v      v0, (a1)                 # Get x[i]
 	sub         a0, a0, t0               # Decrement element count
@@ -14,5 +14,5 @@ conditional:
 	add         a3, a3, t0               # b[i] bump pointer
 	vse16.v     v2, (a4)                 # Store z
 	add         a4, a4, t0               # z[i] bump pointer
-	bnez        a0, conditional
+	bnez        a0, ternary_assign
 	ret

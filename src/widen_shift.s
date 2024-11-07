@@ -4,7 +4,7 @@
 # a0 holds the total number of elements to process
 # a1 holds the address of the source array
 # a2 holds the address of the destination array
-loop:
+widen_shift:
 	vsetvli     a3, a0, e16, m4, ta, ma  # vtype = 16-bit integer vectors;
 	# also update a3 with vl (# of elements this iteration)
 	vle16.v     v4, (a1)                 # Get 16b vector
@@ -17,5 +17,5 @@ loop:
 	slli        t1, a3, 2                # Multiply # elements this iteration by 4 bytes/destination element
 	add         a2, a2, t1               # Bump pointer
 	sub         a0, a0, a3               # Decrement count by vl
-	bnez        a0, loop                 # Any more?
+	bnez        a0, widen_shift          # Any more?
 	ret
