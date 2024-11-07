@@ -5,7 +5,6 @@ strlen:
 loop:
 	vsetvli     a1, x0, e8, m8, ta, ma   # Vector of bytes of maximum length
 	vle8ff.v    v8, (a3)                 # Load bytes
-	csrr        a1, vl                   # Get bytes read
 	vmseq.vi    v0, v8, 0                # Set v0[i] where v8[i] = 0
 	vfirst.m    a2, v0                   # Find first set bit
 	add         a3, a3, a1               # Bump pointer
