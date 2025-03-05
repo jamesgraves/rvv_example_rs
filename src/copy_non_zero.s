@@ -1,8 +1,9 @@
+# compact_non_zero(len: usize, r#in: *const i32, out: *mut i32) -> usize;
 # Compact non-zero elements from input memory array to output memory array
 # arguments:
-# a0 = length
-# a1 = un-compacted input vector
-# a2 = compacted output vector
+# a0 = len, length
+# a1 = r, the un-compacted input vector
+# a2 = out, the compacted output vector
 # return value:
 # a0 = length of compacted output vector
 compact_non_zero:

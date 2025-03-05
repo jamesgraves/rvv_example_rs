@@ -5,7 +5,7 @@ strcpy:
 	mv          a2, a0                   # Copy destination pointer for local use.
 loop:
 	# update t1 with vl (number of elements this iteration)
-	# max length vectors of bytes, so not tracking array size
+	# max length vectors of bytes, set vl to VLMAX
 	# SEW=8b - selected element width is 8-bit (byte)
 	# LMUL=8 vector register group multiplier
 	# tail policy: agnostic
